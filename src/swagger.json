@@ -1,0 +1,100 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Node API | Control of medical exams",
+    "description": "This is a Rest API",
+    "version": "1.0.0",
+    "contact": {
+      "email": "email@email.com"
+    }
+  },
+  "paths": {
+    "/typephones": {
+      "post": {
+        "tags": ["Type phone"],
+        "sumary": "Create a type of phone",
+        "description": "Create a new type of phone",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  }
+                }
+              },
+              "example": {
+                "name": "Celular"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "500": {
+            "description": "Type of phone already exists"
+          }
+        }
+      
+      },
+      "get": {
+        "tags": ["Type phone"],
+        "summary": "List all type of phones",
+        "description": "List all type of phones",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {                      
+                      "name": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/typeexams": {
+      "post": {
+        "tags": ["Type exams"],
+        "sumary": "Create a type of exam",
+        "description": "Create a new type of exam",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "500": {
+            "description": "Type of phone already exists"
+          }
+        }      
+      }
+    }    
+  }
+}

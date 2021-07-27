@@ -1,0 +1,26 @@
+version: "3.7"
+
+services:
+  database:
+    image: postgres 
+    container_name: database_api
+    restart: always
+    ports:
+      - 5433:5432
+    environment: 
+      - POSTGRES_USER=docker
+      - POSTGRES_PASSWORD=123456
+      - POSTGRES_DB=nodeapi
+    volumes:
+      - pgdata:/data/postgres
+  # app:
+  #   build: .
+  #   container_name: app_api
+  #   ports: 
+  #     - 3001:3001
+  #   volumes:
+  #     - .:/usr/app
+
+volumes: 
+  pgdata: 
+    driver: local
